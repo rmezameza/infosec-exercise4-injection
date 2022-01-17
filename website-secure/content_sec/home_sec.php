@@ -9,7 +9,7 @@
             <h1 class="mb-5">Gelistete Bücher</h1>
 
             <?php
-                include_once 'func_sec/class_sec/DatabaseConnectorSec.php';
+                include_once 'website-secure/func_sec/class_sec/DatabaseConnectorSec.php';
 
                 $databaseConnector = new DatabaseConnectorSec();
 
@@ -21,7 +21,7 @@
                     <div class="row mb-4">
                         <div class="col">
                             <img class="img-fluid"
-                                    src="../img_sec/<?php
+                                    src="/img/<?php
                                                 if($book['book_cover'] == null) {
                                                     echo "book_cover_na.jpg";
                                                 }

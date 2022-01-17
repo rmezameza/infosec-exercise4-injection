@@ -6,7 +6,7 @@
     <body>
         <div class="container">
             <?php
-                include_once 'func/class/DatabaseConnector.php';
+                include_once 'website-notsecure/func/class/DatabaseConnector.php';
 
                 $databaseConnector = new DatabaseConnector();
 

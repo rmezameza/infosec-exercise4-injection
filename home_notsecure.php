@@ -11,7 +11,7 @@
             <!-- Navigation section -->
             <div id="navigation" class="container pt-5">
                 <?php
-                include_once 'content/navigation.html';
+                include_once 'website-notsecure/content/navigation.html';
                 ?>
             </div>
 
@@ -20,7 +20,7 @@
                 <?php
                 // Include main mechanic for website which checks
                 // id in url for specific content and clears url input
-                include_once 'func/inc/main.inc.php';
+                include_once 'website-notsecure/func/inc/main.inc.php';
                 include_once (takeURLType());
                 ?>
             </div>

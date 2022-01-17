@@ -6,8 +6,8 @@
     <body>
         <div class="container">
             <?php
-                include_once 'func_sec/class_sec/DatabaseConnectorSec.php';
-                include_once 'func_sec/inc_sec/func_sec.inc.php';
+                include_once 'website-secure/func_sec/class_sec/DatabaseConnectorSec.php';
+                include_once 'website-secure/func_sec/inc_sec/func_sec.inc.php';
 
                 $databaseConnector = new DatabaseConnectorSec();
 
