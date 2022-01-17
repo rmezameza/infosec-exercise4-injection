@@ -20,7 +20,7 @@
                     <div class="row mb-4">
                         <div class="col">
                             <img class="img-fluid"
-                                    src="/img/<?php
+                                    src="../img/<?php
                                                 if($book['book_cover'] == null) {
                                                     echo "book_cover_na.jpg";
                                                 }

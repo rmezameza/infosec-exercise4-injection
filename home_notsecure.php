@@ -2,7 +2,7 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
         <title>Gruppe12 | Injection | Ungesichert</title>
     </head>
     <!-- window.alert("Welcome to our website"); -->
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <script src="/jquery-3.6.0.js"></script>
-        <script src="/js/bootstrap/bootstrap.bundle.js"></script>
+        <script src="../jquery-3.6.0.js"></script>
+        <script src="../js/bootstrap/bootstrap.bundle.js"></script>
     </body>
 </html>
