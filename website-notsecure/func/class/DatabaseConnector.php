@@ -38,7 +38,10 @@ class DatabaseConnector
     }
 
     public function loginUser($username, $password) {
-        $sql = "SELECT * FROM user WHERE username = {$username} AND password = MD5({$username})";
-        return $this->conn->query($sql);
+        $password = MD5($password);
+        $sql = "SELECT * FROM user WHERE username = '{$username}' AND password = '{$password}'";
+        $result = $this->conn->query($sql);
+
+        return $result->fetch_assoc() > 0;
     }
 }

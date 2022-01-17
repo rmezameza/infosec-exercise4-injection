@@ -1165,7 +1165,7 @@
 
                 // Support: IE 8 - 11+, Edge 12 - 18+, Chrome <=16 - 25 only, Firefox <=3.6 - 31 only,
                 // Safari 4 - 5 only, Opera <=11.6 - 12.x only
-                // IE/Edge & older browsers don't support the :scope pseudo-class.
+                // IE/Edge & older browsers don't support the :scope pseudo-class_sec.
                 // Support: Safari 6.0 only
                 // Safari 6.0 supports :scope but it's an alias of :root there.
                 support.scope = assert( function( el ) {
@@ -1326,7 +1326,7 @@
 
                         // Select is set to empty string on purpose
                         // This is to test IE's treatment of not explicitly
-                        // setting a boolean content attribute,
+                        // setting a boolean content_sec attribute,
                         // since its presence should be enough
                         // https://bugs.jquery.com/ticket/12359
                         docElem.appendChild( el ).innerHTML = "<a id='" + expando + "'></a>" +
@@ -2049,7 +2049,7 @@
 
                     "PSEUDO": function( pseudo, argument ) {
 
-                        // pseudo-class names are case-insensitive
+                        // pseudo-class_sec names are case-insensitive
                         // http://www.w3.org/TR/selectors/#pseudo-classes
                         // Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
                         // Remember that setFilters inherits from pseudos
@@ -2208,7 +2208,7 @@
                     "empty": function( elem ) {
 
                         // http://www.w3.org/TR/selectors/#empty-pseudo
-                        // :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+                        // :empty is negated by element (1) or content_sec nodes (text: 3; cdata: 4; entity ref: 5),
                         //   but not by others (comment: 8; processing instruction: 7; etc.)
                         // nodeType < 6 works because attributes (2) do not appear as children
                         for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -3978,7 +3978,7 @@
             // Make the deferred a promise
             promise.promise( deferred );
 
-            // Call given func if any
+            // Call given func_sec if any
             if ( func ) {
                 func.call( deferred, deferred );
             }
@@ -5035,7 +5035,7 @@
                     wrap = wrapMap[ tag ] || wrapMap._default;
                     tmp.innerHTML = wrap[ 1 ] + jQuery.htmlPrefilter( elem ) + wrap[ 2 ];
 
-                    // Descend through wrappers to the right content
+                    // Descend through wrappers to the right content_sec
                     j = wrap[ 0 ];
                     while ( j-- ) {
                         tmp = tmp.lastChild;
@@ -6063,7 +6063,7 @@
                 fragment = first;
             }
 
-            // Require either new content or an interest in ignored elements to invoke the callback
+            // Require either new content_sec or an interest in ignored elements to invoke the callback
             if ( first || ignored ) {
                 scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
                 hasScripts = scripts.length;
@@ -6349,7 +6349,7 @@
         replaceWith: function() {
             var ignored = [];
 
-            // Make the changes, replacing each non-ignored context element with the new content
+            // Make the changes, replacing each non-ignored context element with the new content_sec
             return domManip( this, arguments, function( elem ) {
                 var parent = this.parentNode;
 
@@ -6463,7 +6463,7 @@
             pixelBoxStylesVal = roundPixelMeasures( divStyle.right ) === 36;
 
             // Support: IE 9 - 11 only
-            // Detect misreporting of content dimensions for box-sizing:border-box elements
+            // Detect misreporting of content_sec dimensions for box-sizing:border-box elements
             boxSizingReliableVal = roundPixelMeasures( divStyle.width ) === 36;
 
             // Support: IE 9 only
@@ -6496,9 +6496,9 @@
 
         // Support: IE <=9 - 11 only
         // Style of cloned element affects source element cloned (#8908)
-        div.style.backgroundClip = "content-box";
+        div.style.backgroundClip = "content_sec-box";
         div.cloneNode( true ).style.backgroundClip = "";
-        support.clearCloneStyle = div.style.backgroundClip === "content-box";
+        support.clearCloneStyle = div.style.backgroundClip === "content_sec-box";
 
         jQuery.extend( support, {
             boxSizingReliable: function() {
@@ -6721,7 +6721,7 @@
                 delta += jQuery.css( elem, box + cssExpand[ i ], true, styles );
             }
 
-            // If we get here with a content-box, we're seeking "padding" or "border" or "margin"
+            // If we get here with a content_sec-box, we're seeking "padding" or "border" or "margin"
             if ( !isBorderBox ) {
 
                 // Add padding
@@ -6736,26 +6736,26 @@
                     extra += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
                 }
 
-                // If we get here with a border-box (content + padding + border), we're seeking "content" or
+                // If we get here with a border-box (content_sec + padding + border), we're seeking "content_sec" or
                 // "padding" or "margin"
             } else {
 
-                // For "content", subtract padding
+                // For "content_sec", subtract padding
                 if ( box === "content" ) {
                     delta -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
                 }
 
-                // For "content" or "padding", subtract border
+                // For "content_sec" or "padding", subtract border
                 if ( box !== "margin" ) {
                     delta -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
                 }
             }
         }
 
-        // Account for positive content-box scroll gutter when requested by providing computedVal
+        // Account for positive content_sec-box scroll gutter when requested by providing computedVal
         if ( !isBorderBox && computedVal >= 0 ) {
 
-            // offsetWidth/offsetHeight is a rounded sum of content, padding, scroll gutter, and border
+            // offsetWidth/offsetHeight is a rounded sum of content_sec, padding, scroll gutter, and border
             // Assuming integer scroll gutter, subtract the rest and round down
             delta += Math.max( 0, Math.ceil(
                 elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
@@ -6764,7 +6764,7 @@
                 extra -
                 0.5
 
-                // If offsetWidth/offsetHeight is unknown, then we can't determine content-box scroll gutter
+                // If offsetWidth/offsetHeight is unknown, then we can't determine content_sec-box scroll gutter
                 // Use an explicit zero to avoid NaN (gh-3964)
             ) ) || 0;
         }
@@ -6778,7 +6778,7 @@
         var styles = getStyles( elem ),
 
             // To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
-            // Fake content-box until we know it's needed to know the true value.
+            // Fake content_sec-box until we know it's needed to know the true value.
             boxSizingNeeded = !support.boxSizingReliable() || extra,
             isBorderBox = boxSizingNeeded &&
                 jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
@@ -6823,7 +6823,7 @@
 
             // Where available, offsetWidth/offsetHeight approximate border box dimensions.
             // Where not available (e.g., SVG), assume unreliable box-sizing and interpret the
-            // retrieved value as a content box dimension.
+            // retrieved value as a content_sec box dimension.
             valueIsBorderBox = offsetProp in elem;
             if ( valueIsBorderBox ) {
                 val = elem[ offsetProp ];
@@ -7058,7 +7058,7 @@
                         0;
 
                 // Account for unreliable border-box dimensions by comparing offset* to computed and
-                // faking a content-box to get border and padding (gh-3699)
+                // faking a content_sec-box to get border and padding (gh-3699)
                 if ( isBorderBox && scrollboxSizeBuggy ) {
                     subtract -= Math.ceil(
                         elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
@@ -7469,11 +7469,11 @@
                     showHide( [ elem ], true );
                 }
 
-                /* eslint-disable no-loop-func */
+                /* eslint-disable no-loop-func_sec */
 
                 anim.done( function() {
 
-                    /* eslint-enable no-loop-func */
+                    /* eslint-enable no-loop-func_sec */
 
                     // The final step of a "hide" animation is actually hiding the element
                     if ( !hidden ) {
@@ -8376,7 +8376,7 @@
 
                 if ( isValidValue ) {
 
-                    // Toggle individual class names
+                    // Toggle individual class_sec names
                     i = 0;
                     self = jQuery( this );
                     classNames = classesToArray( value );
@@ -8391,7 +8391,7 @@
                         }
                     }
 
-                    // Toggle whole class name
+                    // Toggle whole class_sec name
                 } else if ( value === undefined || type === "boolean" ) {
                     className = getClass( this );
                     if ( className ) {
@@ -8400,7 +8400,7 @@
                         dataPriv.set( this, "__className__", className );
                     }
 
-                    // If the element has a class name or if we're passed `false`,
+                    // If the element has a class_sec name or if we're passed `false`,
                     // then remove the whole classname (if there was one, the above saved it).
                     // Otherwise bring back whatever was previously saved (if anything),
                     // falling back to the empty string if nothing was stored.
@@ -9124,7 +9124,7 @@
     }
 
     /* Handles responses to an ajax request:
- * - finds the right dataType (mediates between content-type and expected dataType)
+ * - finds the right dataType (mediates between content_sec-type and expected dataType)
  * - returns the corresponding response
  */
     function ajaxHandleResponses( s, jqXHR, responses ) {
@@ -9133,7 +9133,7 @@
             contents = s.contents,
             dataTypes = s.dataTypes;
 
-        // Remove auto dataType and get content-type in the process
+        // Remove auto dataType and get content_sec-type in the process
         while ( dataTypes[ 0 ] === "*" ) {
             dataTypes.shift();
             if ( ct === undefined ) {
@@ -9141,7 +9141,7 @@
             }
         }
 
-        // Check if we're dealing with a known content-type
+        // Check if we're dealing with a known content_sec-type
         if ( ct ) {
             for ( type in contents ) {
                 if ( contents[ type ] && contents[ type ].test( ct ) ) {
@@ -9475,7 +9475,7 @@
                         return this;
                     },
 
-                    // Overrides response content-type header
+                    // Overrides response content_sec-type header
                     overrideMimeType: function( type ) {
                         if ( completed == null ) {
                             s.mimeType = type;
@@ -9576,7 +9576,7 @@
             // Uppercase the type
             s.type = s.type.toUpperCase();
 
-            // Determine if request has content
+            // Determine if request has content_sec
             s.hasContent = !rnoContent.test( s.type );
 
             // Save the URL in case we're toying with the If-Modified-Since
@@ -9584,7 +9584,7 @@
             // Remove hash to simplify url manipulation
             cacheURL = s.url.replace( rhash, "" );
 
-            // More options handling for requests with no content
+            // More options handling for requests with no content_sec
             if ( !s.hasContent ) {
 
                 // Remember the hash so we can put it back
@@ -9608,7 +9608,7 @@
                 // Put hash and anti-cache on the URL that will be requested (gh-1732)
                 s.url = cacheURL + uncached;
 
-                // Change '%20' to '+' if this is encoded form body content (gh-2658)
+                // Change '%20' to '+' if this is encoded form body content_sec (gh-2658)
             } else if ( s.data && s.processData &&
                 ( s.contentType || "" ).indexOf( "application/x-www-form-urlencoded" ) === 0 ) {
                 s.data = s.data.replace( r20, "+" );
@@ -9760,7 +9760,7 @@
                         }
                     }
 
-                    // if no content
+                    // if no content_sec
                     if ( status === 204 || s.type === "HEAD" ) {
                         statusText = "nocontent";
 
@@ -9856,7 +9856,7 @@
     jQuery.ajaxPrefilter( function( s ) {
         var i;
         for ( i in s.headers ) {
-            if ( i.toLowerCase() === "content-type" ) {
+            if ( i.toLowerCase() === "content_sec-type" ) {
                 s.contentType = s.headers[ i ] || "";
             }
         }
@@ -10551,7 +10551,7 @@
                 }
                 if ( offsetParent && offsetParent !== elem && offsetParent.nodeType === 1 ) {
 
-                    // Incorporate borders into its offset, since they are outside its content origin
+                    // Incorporate borders into its offset, since they are outside its content_sec origin
                     parentOffset = jQuery( offsetParent ).offset();
                     parentOffset.top += jQuery.css( offsetParent, "borderTopWidth", true );
                     parentOffset.left += jQuery.css( offsetParent, "borderLeftWidth", true );

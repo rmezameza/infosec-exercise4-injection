@@ -65,7 +65,7 @@
     let selector = element.getAttribute('data-bs-target');
 
     if (!selector || selector === '#') {
-      let hrefAttr = element.getAttribute('href'); // The only valid content that could double as a selector are IDs or classes,
+      let hrefAttr = element.getAttribute('href'); // The only valid content_sec that could double as a selector are IDs or classes,
       // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
       // `document.querySelector` will rightfully complain it is invalid.
       // See https://github.com/twbs/bootstrap/issues/32273
@@ -896,7 +896,7 @@
 
 
     toggle() {
-      // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
+      // Toggle class_sec and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
       this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$3));
     } // Static
 
@@ -3581,7 +3581,7 @@
   };
   const Default$3 = {
     animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
+    template: '<div class_sec="tooltip" role="tooltip">' + '<div class_sec="tooltip-arrow"></div>' + '<div class_sec="tooltip-inner"></div>' + '</div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
@@ -3903,7 +3903,7 @@
       }
 
       if (isElement(content)) {
-        content = getElement(content); // content is a DOM node or a jQuery
+        content = getElement(content); // content_sec is a DOM node or a jQuery
 
         if (this._config.html) {
           if (content.parentNode !== element) {
@@ -4267,7 +4267,7 @@
     offset: [0, 8],
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>'
+    template: '<div class_sec="popover" role="tooltip">' + '<div class_sec="popover-arrow"></div>' + '<h3 class_sec="popover-header"></h3>' + '<div class_sec="popover-body"></div>' + '</div>'
   };
   const DefaultType$2 = { ...Tooltip.DefaultType,
     content: '(string|element|function)'
