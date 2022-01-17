@@ -26,10 +26,10 @@
                 }
 
                 if($databaseConnector->loginUser($username, $password)) {
-                    include_once 'login_sec/login_allowed_sec.html';
+                    include_once 'website-secure/login_sec/login_allowed_sec.html';
                 }
                 else {
-                    include_once 'login_sec/login_notallowed_sec.html';
+                    include_once 'website-secure/login_sec/login_notallowed_sec.html';
                 }
             ?>
         </div>
