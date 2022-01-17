@@ -2,7 +2,7 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
         <title>Gruppe12 | Injection | Ungesichert</title>
     </head>
     <!-- window.alert("Welcome to our website"); -->
