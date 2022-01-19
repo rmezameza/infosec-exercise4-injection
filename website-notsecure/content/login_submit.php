@@ -14,8 +14,8 @@
 
 
                 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
+                    $username = isset($_POST['username']) ? $_POST['username'] : null;
+                    $password = isset($_POST['password']) ? $_POST['password'] : null;
                 }
 
                 if($databaseConnector->loginUser($username, $password)) {

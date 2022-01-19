@@ -6,7 +6,7 @@
         <title>Informationssicherheit - Injection</title>
     </head>
 
-    <body>
+    <body style="background-color: lightblue;">
         <div class="container justify-content-center">
             <div class="row">
                 <div class="col">
@@ -18,18 +18,23 @@
                         <h3>Aufgabenvorstellung</h3>
                         <p>
                             Es werden zwei Beispiele präsentiert, jeweils eine ungesicherte Website, dann die gesicherte.
-                            Gewählt worden sind zwei Kategorien der OWASP Top 10 Liste, "Injection" und "".
+                            Gewählt worden sind zwei Kategorien der OWASP Top 10 Liste, "Injection" und "Cryptographic Failures".
+                        </p>
+
+                        <p>
+                            Die Website wurde mit PHP und HTML5 erstellt. Außerdem verwendet die Website das Framework Bootstrap
+                            für das Design. Die Website bildet einen kleinen Ausschnitt für einen Mitarbeiterbereich ab für einen
+                            Verlag ab. Es werden auf der Homepage die Liste an Büchern präsentiert, die auch Kund:innen sehen können.
+                            Mitarbeiter:innen jedoch können Bücher löschen und hinzufügen. Des Weiteren wird auch ein Login / User
+                            Wechsel angeboten.
                         </p>
 
                         <h4>Injections</h4>
                         <p>
                             Mit diesem Beispiel wollen wir Ihnen zwei Injections präsentieren und wie man sich dagegen schützt.<br>
                             Bei einer Injection handelt es sich um ein Cross-Site-Scripting, genauer um eine Stored XSS. Bei der
-                            zweiten Injection um eine SQL Injection.
-                        </p>
-
-                        <p>
-                            Die Beispiele von Injections wurden erstellt von Anton Chen und Roberto Alfredo Meza Meza.
+                            zweiten Injection um eine SQL Injection. Das Cross-Site-Scripting wird im Bereich des Buch-Hinzufügens
+                            und im Bereich für die Liste der Bücher präsentiert. Die SQL Injection im Loginbereich.
                         </p>
 
                         <p class="text-center">
@@ -40,9 +45,23 @@
                             <a class="btn btn-secondary" href="home_secure.php/">Gesicherte Website</a>
                         </p>
 
-                        <h4>Andere Schwachstelle</h4>
+                        <h4>Cryptographic Failures</h4>
+                        <p>
+                            Mit diesem Beispiel wollen wir Ihnen die Verwendung von veralteten Verschlüsselungen und dessen
+                            Auswirkungen präsentieren. In PHP gibt es einige Funktionen für Verschlüsselungen, die weiterhin
+                            Verwendung finden, vor allem in alten Websites, jedoch offiziell als deprecated gelten. Für dieses
+                            Beispiel wurde der Login Bereich verwendet.
+                        </p>
 
-                        <p class="alert-warning text-center">
+                        <p class="text-center">
+                            <a class="btn btn-secondary" href="home_notsecure.php/">Ungesicherte Website</a>
+                        </p>
+
+                        <p class="text-center">
+                            <a class="btn btn-secondary" href="home_secure.php/">Gesicherte Website</a>
+                        </p>
+
+                        <p class="alert-warning text-center border rounded-1" style="background: white;">
                             Achtung! Die ungesicherten Beispiele dienen nur für Forschungszwecke. Diese sollen die Schwachstellen<br>
                             verdeutlichen. Bitte die Website nur lokal ausprobieren, niemals online Stellen oder online nur mit entsprechenden<br>
                             Sicherheitsvorkehrungen.
